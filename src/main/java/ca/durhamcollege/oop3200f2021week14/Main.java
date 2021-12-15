@@ -35,7 +35,10 @@ public class Main extends Application {
         scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         stage.setTitle("OOP3200  - F2021 - Week 14");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
+
+
     }
 
     public static void main(String[] args) {

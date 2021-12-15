@@ -55,6 +55,8 @@ public class MainController {
         firstNumberTextField.clear();
         secondNumberTextField.clear();
         resultTextField.clear();
+
+        firstNumberTextField.requestFocus();
     }
 
 
