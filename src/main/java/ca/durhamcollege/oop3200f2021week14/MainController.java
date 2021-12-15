@@ -11,40 +11,52 @@ public class MainController {
     private Integer one;
     private Integer two;
 
+    @FXML
+    private Label titleLabel;
 
     @FXML
-    private Label welcomeLabel;
+    private Label firstNumberLabel;
 
     @FXML
-    private Button clickMeButton;
+    private Label secondNumberLabel;
 
     @FXML
-    private TextField nameTextField;
+    private Label resultLabel;
 
     @FXML
-    private Label nameLabel;
+    private Button computeButton;
+
+    @FXML
+    private TextField firstNumberTextField;
+
+    @FXML
+    private TextField secondNumberTextField;
+
+    @FXML
+    private TextField resultTextField;
 
 
     @FXML
-    protected void OnClickMeButton_Clicked()
+    protected void OnComputeButton_Clicked()
     {
-        welcomeLabel.setText("Welcome to Week 14!");
+        var firstString = firstNumberTextField.getText();
+        var secondString = secondNumberTextField.getText();
+        var result = AddString(firstString, secondString);
+
+        firstNumberTextField.clear();
+        secondNumberTextField.clear();
+
+        resultTextField.setText("" + result);
     }
 
     @FXML
-    protected void OnNameTextField_Submitted()
+    protected void OnClearButton_Clicked()
     {
-        var text = nameTextField.getText();
-        welcomeLabel.setText(text);
-        nameTextField.clear();
-
-        String oneString = "1";
-        String twoString = "2";
-
-        var result = AddString(oneString, twoString);
-        System.out.println("Result: " + result);
-
+        firstNumberTextField.clear();
+        secondNumberTextField.clear();
+        resultTextField.clear();
     }
+
 
     // Utility functions
     private int AddString(String lhs, String rhs)
